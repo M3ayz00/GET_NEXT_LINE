@@ -16,8 +16,6 @@ void	*ft_calloc(size_t num_elements, size_t element_size)
 {
 	void	*a;
 
-	if (num_elements != 0 && SIZE_MAX / num_elements < element_size)
-		return (NULL);
 	a = malloc(num_elements * element_size);
 	if (!a)
 		return (NULL);
@@ -51,26 +49,34 @@ char	*update_container(char *container)
 		free(container);
 		return (NULL);
 	}
-	while (container[i++])
-		updated[j++] = container[i];
+	i++;
+	while (container[i])
+		updated[j++] = container[i++];
 	free(container);
 	return (updated);
 }
 
-char	*get_line(char *container)
+char	*gget_line(char *container)
 {
 	char	*line;
 	int		i;
+	int		end;
 
 	i = 0;
+	if (!container[i])
+		return (NULL);
 	while (container[i] && container[i] != '\n')
 		i++;
-	line = (char *)ft_calloc(i + 2, sizeof(char));
+	if (container[i] == '\n')
+		end = 2;
+	else
+		end = 1;
+	line = (char *)ft_calloc(i + end, sizeof(char));
 	if (!line)
 		return (NULL);
 	ft_memcpy(line, container, i);
-	if (*(container + i + 1) == '\n')
-		*(line + i + 1) = '\n';
+	if (*(container + i) == '\n')
+		*(line + i) = '\n';
 	return (line);
 }
 
@@ -79,12 +85,12 @@ char	*read_file(int fd, char *container)
 	char	*buffer;
 	int		readed;
 
-	readed = 1;
 	if (!container)
 		container = ft_calloc(1, 1);
 	buffer = (char *)malloc(sizeof(char) * BUFFER_SIZE + 1);
 	if (!buffer)
 		return (NULL);
+	readed = 1;
 	while (!ft_strchr(container, '\n') && readed >= 1)
 	{
 		readed = read(fd, buffer, BUFFER_SIZE);
@@ -111,21 +117,18 @@ char	*get_next_line(int fd)
 	container = read_file(fd, container);
 	if (!container)
 		return (NULL);
-	line = get_line(container);
+	line = gget_line(container);
 	container = update_container(container);
 	return (line);
 }
-int main()
-{
-	int fd = open("sbiskal.txt", O_RDONLY);
-	char *awee = get_next_line(fd);
+// int main()
+// {
+// 	char *awee = get_next_line(0);
 
-	while(awee)
-	{
-		printf("%s",get_next_line(fd));
-		free(awee);
-		awee=get_next_line(fd);
-	}
-
-
-}
+// 	while(awee)
+// 	{
+// 		printf("%s", awee);
+// 		free(awee);
+// 		awee=get_next_line(0);
+// 	}
+// }

@@ -14,7 +14,7 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	unsigned char *p;
+	unsigned char	*p;
 
 	p = (unsigned char *)s;
 	while (n--)
@@ -38,6 +38,7 @@ char	*ft_strchr(char *str, int c)
 size_t	ft_strlen(char *str)
 {
 	size_t	i;
+
 	if (!str)
 		return (0);
 	i = 0;
