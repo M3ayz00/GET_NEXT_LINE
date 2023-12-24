@@ -122,19 +122,19 @@ char	*get_next_line(int fd)
 	return (line);
 }
 
-int main()
-{
-	int fd1 = open("text1.txt",O_CREAT | O_RDWR);
-    int fd2 = open("text2.txt",O_CREAT | O_RDWR);
-    int fd3 = open("text3.txt",O_CREAT | O_RDWR);
-	printf("%s\n", get_next_line(fd1));
-	printf("%s\n", get_next_line(fd2));
-	printf("%s\n", get_next_line(fd3));
-	printf("%s\n", get_next_line(fd1));
-	printf("%s\n", get_next_line(fd2));
-	printf("%s\n", get_next_line(fd3));
-	printf("%s\n", get_next_line(fd1));
-	printf("%s\n", get_next_line(fd2));
-	printf("%s\n", get_next_line(fd3));
+// int main()
+// {
+// 	int fd1 = open("text1.txt",O_CREAT | O_RDWR);
+//     int fd2 = open("text2.txt",O_CREAT | O_RDWR);
+//     int fd3 = open("text3.txt",O_CREAT | O_RDWR);
+// 	printf("%s\n", get_next_line(fd1));
+// 	printf("%s\n", get_next_line(fd2));
+// 	printf("%s\n", get_next_line(fd3));
+// 	printf("%s\n", get_next_line(fd1));
+// 	printf("%s\n", get_next_line(fd2));
+// 	printf("%s\n", get_next_line(fd3));
+// 	printf("%s\n", get_next_line(fd1));
+// 	printf("%s\n", get_next_line(fd2));
+// 	printf("%s\n", get_next_line(fd3));
 
-}
+// }
