@@ -121,8 +121,8 @@ char	*get_next_line(int fd)
 	container = update_container(container);
 	return (line);
 }
-int main()
-{
-	char *awee = get_next_line(INT_MAX);
-	printf("%s", awee);
-}
+// int main()
+// {
+// 	char *awee = get_next_line(INT_MAX);
+// 	printf("%s", awee);
+// }
