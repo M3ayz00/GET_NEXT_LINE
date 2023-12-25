@@ -6,7 +6,7 @@
 /*   By: msaadidi <msaadidi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 16:41:33 by msaadidi          #+#    #+#             */
-/*   Updated: 2023/12/24 16:41:41 by msaadidi         ###   ########.fr       */
+/*   Updated: 2023/12/24 17:56:40 by msaadidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <fcntl.h>
 # include <stdio.h>
 # include <stdint.h>
+# include <limits.h>
 
 char	*get_next_line(int fd);
 void	*ft_calloc(size_t num_elements, size_t element_size);

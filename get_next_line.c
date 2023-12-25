@@ -6,7 +6,7 @@
 /*   By: msaadidi <msaadidi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 18:51:18 by msaadidi          #+#    #+#             */
-/*   Updated: 2023/11/29 15:28:13 by msaadidi         ###   ########.fr       */
+/*   Updated: 2023/12/25 12:59:30 by msaadidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ char	*read_file(int fd, char *container)
 	free(buffer);
 	return (container);
 }
-
+#include <limits.h>
 char	*get_next_line(int fd)
 {
 	static char	*container;
@@ -121,14 +121,8 @@ char	*get_next_line(int fd)
 	container = update_container(container);
 	return (line);
 }
-// int main()
-// {
-// 	char *awee = get_next_line(0);
-
-// 	while(awee)
-// 	{
-// 		printf("%s", awee);
-// 		free(awee);
-// 		awee=get_next_line(0);
-// 	}
-// }
+int main()
+{
+	char *awee = get_next_line(INT_MAX);
+	printf("%s", awee);
+}

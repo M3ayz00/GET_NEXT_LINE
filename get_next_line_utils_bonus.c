@@ -6,11 +6,11 @@
 /*   By: msaadidi <msaadidi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 16:40:47 by msaadidi          #+#    #+#             */
-/*   Updated: 2023/12/24 16:40:50 by msaadidi         ###   ########.fr       */
+/*   Updated: 2023/12/25 13:00:37 by msaadidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {
